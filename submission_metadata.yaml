@@ -1,0 +1,80 @@
+# Redrob Hackathon — Submission Metadata
+# Copy fields to the portal at upload time.
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "your-team-name-here"
+
+primary_contact:
+  name: "Full Name"
+  email: "primary@example.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Member 1 Full Name"
+    email: "member1@example.com"
+    role: "ML Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/YOUR_USERNAME/YOUR_REPO"
+
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+
+reproduce_command: "python -m src.rank --candidates data/candidates.jsonl --jd data/job_description.docx --out team_xxx.csv"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local Windows 11 PC"
+  cpu_cores: 12
+  ram_gb: 16
+  python_version: "3.14.3"
+  os: "Windows 11 Home"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "OpenCode"
+  - "DeepSeek"
+  - "Microsoft Copilot"
+
+ai_usage_summary: |
+  OpenCode (driving agent) used for architecture design, code generation,
+  debugging assistance, and documentation. DeepSeek (model behind OpenCode)
+  used for code reasoning and drafting. Microsoft Copilot used for inline
+  autocomplete during manual edits. No candidate data was ever sent to any
+  external API — the ranking pipeline runs entirely locally with no network
+  calls.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  Rule-based ranker with explicit per-candidate reasoning. Seven scoring
+  components (skill depth weighted by proficiency/duration/endorsements,
+  role+seniority fit, company background with consulting-firm penalty,
+  location/work-mode alignment, behavioral composite from 23 platform
+  signals, TF-IDF semantic similarity, and honeypot/consistency penalties)
+  combined via a weighted formula with a behavioral modifier. Skill-depth
+  weighting with endorsement+duration trust multipliers catches keyword
+  stuffers; generic-summary and title-desc mismatch detection catches
+  honeypot profiles. Runtime ~100 seconds for 100K candidates on CPU.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

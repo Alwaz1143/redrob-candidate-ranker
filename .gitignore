@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dataset (not committed due to size/distribution)
+data/candidates.jsonl
+
+# Generated output (team_xxx.csv and any test outputs)
+/team_*.csv
