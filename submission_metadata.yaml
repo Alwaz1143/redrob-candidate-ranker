@@ -1,7 +1,7 @@
 # Redrob Hackathon — Submission Metadata
 # Copy fields to the portal at upload time.
 
-team_name: "Alwaz Solo"
+team_name: "ForgeSec"
 
 primary_contact:
   name: "Saiyed Alwaz Hussain"
@@ -11,12 +11,15 @@ primary_contact:
 team_members:
   - name: "Saiyed Alwaz Hussain"
     email: "alwaz1143@gmail.com"
-    role: "Solo Participant"
+    role: "Pipeline & Submission Engineering: Handled data processing, validation, sandbox setup, and final packaging."
+  - name: "Bhuvanyu Geel"
+    email: "bhuvanyugeel19@gmail.com"
+    role: "Ranking & ML Design: Built the core scoring logic, feature signals, and reasoning generation."
 
 github_repo: "https://github.com/Alwaz1143/redrob-candidate-ranker"
 sandbox_link: "https://huggingface.co/spaces/alwaz/redrob-candidate-ranker-streamlit"
 
-reproduce_command: "python -m src.rank --candidates data/candidates.jsonl --jd data/job_description.docx --out team_xxx.csv"
+reproduce_command: "python -m src.rank --candidates data/candidates.jsonl --jd data/job_description.docx --out ForgeSec.csv"
 
 compute:
   platform: "Local Windows 11 PC"
@@ -33,7 +36,6 @@ ai_tools_used:
   - "OpenCode"
   - "DeepSeek"
   - "Perplexity"
-  - "Other"
 
 ai_usage_summary: |
   Used OpenCode with DeepSeek for architecture discussion, code drafting,
