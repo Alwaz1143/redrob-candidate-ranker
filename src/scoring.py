@@ -112,7 +112,7 @@ def generate_reasoning(candidate: dict, features: dict, score: float, rank: int)
 
     hp_total = honeypot.get("total_penalty", 0.0)
     if hp_total > 0.5:
-        parts.append("⚠ profile inconsistencies detected")
+        parts.append("profile inconsistencies detected")
 
     if country == "India" and loc:
         parts.append(f"based in {loc}")
