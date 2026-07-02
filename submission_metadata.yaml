@@ -1,10 +1,7 @@
 # Redrob Hackathon — Submission Metadata
 # Copy fields to the portal at upload time.
 
-# ============================================================================
-# Team identity
-# ============================================================================
-team_name: "your-team-name-here"
+team_name: "Alwaz Solo"
 
 primary_contact:
   name: "Saiyed Alwaz Hussain"
@@ -12,22 +9,15 @@ primary_contact:
   phone: "+91-9893016340"
 
 team_members:
-  - name: "Member 1 Full Name"
-    email: "member1@example.com"
-    role: "ML Engineer"
+  - name: "Saiyed Alwaz Hussain"
+    email: "alwaz1143@gmail.com"
+    role: "Solo Participant"
 
-# ============================================================================
-# Code and reproducibility
-# ============================================================================
-github_repo: "https://github.com/Alwaz1143/redrob-candidate-ranker.git"
-
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+github_repo: "https://github.com/Alwaz1143/redrob-candidate-ranker"
+sandbox_link: "https://huggingface.co/spaces/alwaz/redrob-candidate-ranker-streamlit"
 
 reproduce_command: "python -m src.rank --candidates data/candidates.jsonl --jd data/job_description.docx --out team_xxx.csv"
 
-# ============================================================================
-# Compute environment
-# ============================================================================
 compute:
   platform: "Local Windows 11 PC"
   cpu_cores: 12
@@ -39,39 +29,27 @@ compute:
   pre_computation_required: false
   pre_computation_time_minutes: 0
 
-# ============================================================================
-# AI tools declaration
-# ============================================================================
 ai_tools_used:
   - "OpenCode"
   - "DeepSeek"
   - "Perplexity"
+  - "Other"
 
 ai_usage_summary: |
-  OpenCode (driving agent) used for architecture design, code generation,
-  debugging assistance, and documentation. DeepSeek (model behind OpenCode)
-  used for code reasoning and drafting. Microsoft Copilot used for inline
-  autocomplete during manual edits. No candidate data was ever sent to any
-  external API — the ranking pipeline runs entirely locally with no network
-  calls.
+  Used OpenCode with DeepSeek for architecture discussion, code drafting,
+  refactoring, and debugging assistance. Used Perplexity for spec review,
+  submission guidance, and workflow planning. The ranking pipeline itself runs
+  fully locally on CPU with no external API calls or network access during
+  ranking.
 
-# ============================================================================
-# Approach summary
-# ============================================================================
 methodology_summary: |
-  Rule-based ranker with explicit per-candidate reasoning. Seven scoring
-  components (skill depth weighted by proficiency/duration/endorsements,
-  role+seniority fit, company background with consulting-firm penalty,
-  location/work-mode alignment, behavioral composite from 23 platform
-  signals, TF-IDF semantic similarity, and honeypot/consistency penalties)
-  combined via a weighted formula with a behavioral modifier. Skill-depth
-  weighting with endorsement+duration trust multipliers catches keyword
-  stuffers; generic-summary and title-desc mismatch detection catches
-  honeypot profiles. Runtime ~100 seconds for 100K candidates on CPU.
+  Hybrid candidate ranker combining skill-depth scoring, role and seniority
+  fit, company-background filters, location and work-mode alignment,
+  behavioral-signal scoring, TF-IDF semantic similarity, and consistency-based
+  honeypot penalties. Candidates are ranked with deterministic tie-breaking
+  and explicit reasoning generation tied to observed profile facts. Runtime is
+  about 100 seconds for 100K candidates on a local CPU-only machine.
 
-# ============================================================================
-# Declarations
-# ============================================================================
 declarations:
   read_submission_spec: true
   code_is_original_work: true
